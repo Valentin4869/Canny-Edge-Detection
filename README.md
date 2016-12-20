@@ -1,2 +1,2 @@
 # Canny-Edge-Detection
-A MATLAB implementation of the canny edge detection algorithm.
+A MATLAB implementation of the canny edge detection algorithm with a GUI.
