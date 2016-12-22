@@ -59,34 +59,25 @@ for i=1:m
         pixel_p= pixel+dir_vec;
         pixel_n= pixel-dir_vec;
         
-        if sum(pixel_p==0+pixel_n==0)==0
-            if Magnitude(i,j)<Magnitude(pixel_p(1),pixel_p(2)) || Magnitude(i,j)<Magnitude(pixel_n(1),pixel_n(2))
+            try
+                mp=Magnitude(pixel_p(1),pixel_p(2));
+            catch
+                mp=0;
+            end
+            
+            try
+                mn=Magnitude(pixel_n(1),pixel_n(2));
+            catch
+                mn=0;
+            end
+            
+       
+            if Magnitude(i,j)< mp || Magnitude(i,j)< mn
                 I_N(i,j)=0;
             else
                 I_N(i,j)=Magnitude(i,j);
-            end
-            
-        else
-            
-            try
-                m1=Magnitude(pixel_p(1),pixel_p(2));
-            catch
-                m1=0;
-            end
-            
-            try
-                m2=Magnitude(pixel_n(1),pixel_n(2));
-            catch
-                m2=0;
-            end
-            
-             if Magnitude(i,j)<m1 || Magnitude(i,j)<m2
-                I_N(i,j)=0;
-            else
-            
-            end
-            
-        end
+            end             
+       
     end
 end
 
